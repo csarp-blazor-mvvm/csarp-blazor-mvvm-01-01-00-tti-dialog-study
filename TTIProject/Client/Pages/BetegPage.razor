@@ -20,7 +20,13 @@
         <button type="submit" disabled="@ViewModel.IsBusy">TTI meghatározás</button>
      </div>
 </EditForm>
-
+<div class="card mt-2 p-2">
+    <h5 class="card-title">Kiértékelés</h5>
+    <div class="card-body">
+        <p>TTI: @ViewModel.TTI</p>
+        <p>Értékelés: @ViewModel.BetegAdatok</p>
+    </div>
+</div>
 
 @code {
 
