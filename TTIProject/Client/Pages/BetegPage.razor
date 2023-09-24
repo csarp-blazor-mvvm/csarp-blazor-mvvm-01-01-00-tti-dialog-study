@@ -3,7 +3,7 @@
 @using TTIProject.Model;
 
 <h3>Beteg adatok</h3>
-<EditForm Model="@ViewModel">
+<EditForm Model="@ViewModel" OnValidSubmit="@Compute">
      <div class="col-4">
         <div class="form-group">
             <label for="nev">Név</label>
