@@ -4,6 +4,12 @@
 
 <h3>Beteg adatok</h3>
 <EditForm Model="@ViewModel">
+     <div class="col-4">
+        <div class="form-group">
+            <label for="nev">Név</label>
+            <InputText class="form-control" id="nev" @bind-Value="@ViewModel.Nev" />
+        </div>
+     </div>
 </EditForm>
 
 
