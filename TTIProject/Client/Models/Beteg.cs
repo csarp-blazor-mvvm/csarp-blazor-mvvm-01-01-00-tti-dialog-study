@@ -1,9 +1,9 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
+using ViewModels.BaseClass;
 
 namespace TTIProject.Model
 {
-    public class Beteg : INotifyPropertyChanged
+    public class Beteg : ViewModelBase
     {
         /// <summary>
         /// Beteg neve
@@ -79,18 +79,6 @@ namespace TTIProject.Model
             {
                 return nev + " beteg testőmeg indexe: " + TTI;
             }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        /// <summary>
-        /// Megírjuk az interface szükséges metódusát. Mindig ezt kell írni
-        /// </summary>
-        /// <param name="property"></param>
-        private void OnPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
         }
     }
 }
