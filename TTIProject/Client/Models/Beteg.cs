@@ -8,24 +8,24 @@ namespace TTIProject.Model
         /// <summary>
         /// Beteg neve
         /// </summary>
-        private string nev;
+        private string _nev;
         /// <summary>
         /// Beteg súlya (kg)
         /// </summary>
-        private double suly;
+        private double _suly;
         /// <summary>
         /// Beteg magassága (méter)
         /// </summary>
-        private double magassag;
+        private double _magassag;
 
         /// <summary>
         /// Alapértelmezett konstruktor
         /// </summary>
         public Beteg()
         {
-            nev = string.Empty;
-            suly = 60;
-            magassag = 1.6;
+            _nev = string.Empty;
+            _suly = 60;
+            _magassag = 1.6;
         }
 
         /// <summary>
@@ -33,30 +33,19 @@ namespace TTIProject.Model
         /// </summary>
         public string Nev
         {
-            set
-            {
-                nev = value;
-                OnPropertyChanged("BetegAdatok");
-            }
+            get => _nev;
+            set => SetValue(ref _nev, value);
         }
         public double Suly
         {
-            set
-            {
-                suly = value;
-                OnPropertyChanged("BetegAdatok");
-                OnPropertyChanged("TTI");
-            }
+            get => _suly;
+            set => SetValue(ref _suly, value);
         }
 
         public double Magassag
         {
-            set
-            {
-                magassag = value;
-                OnPropertyChanged("BetegAdatok");
-                OnPropertyChanged("TTI");
-            }
+            get => _magassag;
+            set => SetValue(ref _magassag, value);
         }
 
         /// <summary>
@@ -67,7 +56,7 @@ namespace TTIProject.Model
         {
             get
             {
-                double tti = suly / Math.Pow(magassag, 2);
+                double tti = _suly / Math.Pow(_magassag, 2);
                 double roundedTTI = Math.Round(tti, 2);
                 return roundedTTI;
             }
@@ -77,7 +66,7 @@ namespace TTIProject.Model
         {
             get
             {
-                return nev + " beteg testőmeg indexe: " + TTI;
+                return _nev + " beteg testőmeg indexe: " + TTI;
             }
         }
     }
