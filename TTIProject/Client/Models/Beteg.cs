@@ -69,5 +69,11 @@ namespace TTIProject.Model
                 return _nev + " beteg testőmeg indexe: " + TTI;
             }
         }
+
+        public void Compute()
+        {
+            OnPropertyChanged(nameof(TTI));
+            OnPropertyChanged(nameof(BetegAdatok));
+        }
     }
 }

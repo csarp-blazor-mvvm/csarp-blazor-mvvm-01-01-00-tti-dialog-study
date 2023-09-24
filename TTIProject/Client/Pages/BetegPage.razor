@@ -50,4 +50,11 @@
     {
         ViewModel.PropertyChanged -= OnPropertyChangedHandler;
     }
+
+    public void Compute()
+    {
+        ViewModel.IsBusy = true;
+        ViewModel.Compute();
+        ViewModel.IsBusy = false;
+    }
 }
