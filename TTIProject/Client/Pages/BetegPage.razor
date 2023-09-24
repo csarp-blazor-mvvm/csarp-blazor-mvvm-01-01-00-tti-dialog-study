@@ -1,4 +1,5 @@
 ﻿@page "/beteg"
+@using System.ComponentModel;
 @using TTIProject.Model;
 
 <h3>Beteg adatok</h3>
@@ -7,4 +8,29 @@
 @code {
 
     private Beteg ViewModel = new Beteg();
+
+    protected override async Task OnInitializedAsync()
+    {
+        ViewModel.PropertyChanged += async (sender, e) =>
+        {
+            await InvokeAsync(() =>
+            {
+                StateHasChanged();
+            });
+        };
+        await base.OnInitializedAsync();
+    }
+
+    async void OnPropertyChangedHandler(object sender, PropertyChangedEventArgs e)
+    {
+        await InvokeAsync(() =>
+        {
+            StateHasChanged();
+        });
+    }
+
+    public void Dispose()
+    {
+        ViewModel.PropertyChanged -= OnPropertyChangedHandler;
+    }
 }
