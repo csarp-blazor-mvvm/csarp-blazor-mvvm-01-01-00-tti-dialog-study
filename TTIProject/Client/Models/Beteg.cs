@@ -36,16 +36,16 @@ namespace TTIProject.Model
             get => _nev;
             set => SetValue(ref _nev, value);
         }
-        public double Suly
+        public string Suly
         {
-            get => _suly;
-            set => SetValue(ref _suly, value);
+            get => _suly.ToString();
+            set => SetValue(ref _suly, Convert.ToDouble(value));
         }
 
-        public double Magassag
+        public string Magassag
         {
-            get => _magassag;
-            set => SetValue(ref _magassag, value);
+            get => _magassag.ToString();
+            set => SetValue(ref _magassag, Convert.ToDouble(value));
         }
 
         /// <summary>
